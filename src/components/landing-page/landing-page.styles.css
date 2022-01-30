@@ -1,0 +1,212 @@
+
+/* Section 1 */
+.section-1{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+/* logo */
+.logo{
+    position: absolute;
+    top: 2rem;
+    left: 5rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: white;
+}
+/* End of logo */
+
+/* Animated-circles */
+.main-circle{
+    width: 55rem;
+    height: 55rem;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: left 2s, top 2s;
+}
+    
+
+.main-circle img{
+    mix-blend-mode: hard-light; 
+    filter: brightness(1.18);
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.main-circle img.resize{
+    width: 130%;
+    height: 130%;
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.circle{
+    width: 22rem;
+    height: 22rem;  
+    border-radius: 50%;
+    background-color: red;
+    align-self: center;
+    justify-self: center;
+    opacity: .5;
+    position: relative;
+    transition: left 2s, top 2s;
+    top: 0;
+    left: 0;
+}
+
+.circle-1{
+    background: url(images/circle-1-img.jpg) center no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+    border: .5rem dotted #231aa1;
+    margin-left: -10rem;
+}
+
+.circle-2{
+    background: url(images/circle-2-img.jpg) center no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+    border: .5rem dashed white;
+    margin-right: -10rem;
+}
+
+.circle-3{
+    background: url(images/circle-3-img.jpg) center no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+    border: 1rem double white;
+    margin-left: -10rem;
+}
+
+.circle-4{
+    background: url(images/circle-4-img.jpg) center no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+    border: .7rem double#231aa1;
+    margin-right: -10rem;
+}
+
+
+/* End of animated-circles */
+
+/* Featured-TExt */
+.featured-text{
+    font-size: 2rem;
+    color: white;
+    text-transform:uppercase;
+    width: 0;
+    word-wrap: break-word;
+    line-height: 3.4;
+    position: sticky;
+    top: 0;
+}
+
+.featured-text-1{
+    margin: 0 auto 0 10rem;
+}
+.featured-text-2{
+    margin: 0 10rem 0 auto;
+}
+/* End of Featured-TExt */
+
+.main-btn{
+    position: absolute;
+    bottom: 3rem;
+    width: 13rem;
+    height: 13rem;
+    background-color:  #231aa1;
+    border-radius: 50%;
+    border: .2rem dotted     white;
+    padding: .2rem;
+    overflow: hidden;
+}
+.main-btn-content{
+    width: 100%;
+    height: 100%;
+    border: .2rem dotted #e7be08;
+    border-radius:  50%;
+    transform: rotate(40deg);
+    transition: transform 0.2s, border 0.2s;
+}
+
+.main-btn:hover .main-btn-content{
+    transform: rotate(60deg);
+    border: 0.2rem dotted #9b0e0e;
+    transition: transform 0.2s 0.5s, border 0.2s;
+}
+
+.ripple {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #e7be08;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: rippleAnim 0.5s forwards;
+}
+@keyframes rippleAnim {
+    0%{
+        width: 0;
+        height: 0;
+    }
+    100%{
+        width: 400%;
+        height: 400%;
+    }
+}
+
+.main-btn-line{
+    position: absolute;
+    top: 4rem;
+    width: 3rem;
+    height: 1.5rem;
+    border: .1rem solid white;
+}
+
+.main-btn-line:nth-child(1){
+    transform: rotateZ(-45deg) translateX(-0.3rem);
+    transform-origin: left center;
+   
+}
+
+.main-btn-line:nth-child(2){
+    transform: rotateZ(45deg) translateX(.3rem);
+    transform-origin: right center;
+    
+}
+
+.main-btn-line:nth-child(3){
+    transform: rotateZ(90deg) translateX(.5rem);
+   
+}
+
+
+
+.main-btn span{
+    position: absolute;
+    bottom: 3rem;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+/* End of Section 1 */
+
+.section-3{
+    width: 100%;
+    height: 100%;
+    padding: 20rem 0 10rem 0;
+    position: relative;
+}
