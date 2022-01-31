@@ -2,16 +2,13 @@ import React from "react";
 import './project.styles.css'
 
 const Project = props => (
-      <div className="project" onMouseEnter={projectEntered} onMouseLeave={projectLeft}>
+      <div className="project" onMouseEnter={projectEntered} onMouseLeave={projectLeft} onClick={() => props.onClick(props.id)}>
         <img src={props.img} alt="" />
       </div>
 )
 
 
 const projectEntered = e => {
-    console.log("Worked");
-    console.log(e.target)
-    console.log(e.target.firstElementChild)
     if(e.target && e.target.firstElementChild){
         e.target.firstElementChild.style.top = `-${e.target.firstElementChild.offsetHeight - e.target.offsetHeight +20}px`
     }
