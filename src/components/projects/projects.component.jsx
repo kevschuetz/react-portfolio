@@ -5,18 +5,19 @@ import img2 from "./projects/project-2.jpg"
 import img2_1 from "./projects/project-2-big.jpg"
 import img3 from "./projects/project-3.jpg"
 import img3_1 from "./projects/project-3-big.jpg"
-import img4 from "./projects/project-4.jpg"
-import img4_1 from "./projects/project-4-big.jpg"
-import img5 from "./projects/project-5.jpg"
-import img5_1 from "./projects/project-5-big.jpg"
 import './projects.styles.css'
 import Project from "./../project/project.component"
 
-
+/**
+ * The section displaying the projects
+ */
 class Projects extends React.Component{
   container;
   projectHideBtn;
 
+  /**
+   * Initializes the state with the project images and binds the methods
+   */
   constructor(){
     super()
 
@@ -25,8 +26,6 @@ class Projects extends React.Component{
         {id: 1, img: img1, img_big: img1_1},
         {id: 2, img: img2, img_big: img2_1},
         {id: 3, img: img3, img_big: img3_1},
-        {id: 4, img: img4, img_big: img4_1},
-        {id: 5, img: img5, img_big: img5_1}
       ],
 
   }
@@ -34,6 +33,9 @@ class Projects extends React.Component{
   this.clickedClose = this.clickedClose.bind(this);
 }
 
+/**
+ * Assigns the container of the whole page and the button to close an enlarged image for the event listeners
+ */
 componentDidMount(){
   this.container = document.querySelector(".container");
   this.projectHideBtn = document.querySelector(".project-hide-btn")
@@ -41,7 +43,7 @@ componentDidMount(){
 }
 /*
 Handles a click on the project:
-creates an image wrapper div elemente and appends it to the document,
+creates an image wrapper div elemente and appends it to the container,
 then creates the image on the fly and appends it to the wrapper
 */
 handleProjectClick(id){
@@ -61,17 +63,24 @@ handleProjectClick(id){
   this.projectHideBtn.classList.add("change");
 }
 
+/**
+ * Handles a click on the project-hide-button by removing the wrapper for the big image from the document
+ * and setting the overflowY style from the document back to sroll
+ * @param {} e 
+ */
 clickedClose(e){
     e.target.classList.remove("change");
-    console.log(e.target.parentElement)
     this.bigImgWrapper.remove();
     document.body.style.overflowY = "scroll";
 }
-
+/**
+ * Returns the Project section
+ * @returns 
+ */
   render(){
     return(
 <div>
-    <h1 className='section-3-heading'>My work</h1>
+    <h1 className='section-heading'>My work</h1>
     <div className="projects center">
       {
         this.state.images.map((image) => (

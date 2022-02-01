@@ -1,23 +1,32 @@
 import {Component} from 'react';
+import React from 'react'
 import designerImg from './images/designer.jpg'
 import Projects from '../projects/projects.component';
 import './landing-page.styles.css';
 
-
+/**
+ * The Landing Page
+ */
 export class LandingPage extends Component {
   mainButton;
   ripple;
+  projectSectionRef;
   
   constructor(){
     super()
     this.state={
       title: "Kevin"
     }
+    this.projectSectionRef = React.createRef();
+    this.scrollToProjectSection = this.scrollToProjectSection.bind(this);
   }
 
+  
   componentDidMount(){
     this.mainButton=document.querySelector(".main-btn");
   }
+
+  scrollToProjectSection = () => this.projectSectionRef.current.scrollIntoView();
 
   render(){
   return (
@@ -60,7 +69,7 @@ export class LandingPage extends Component {
             <div>
 
             </div>
-            <div className="main-btn" onMouseEnter={this.hoveredMainBtn} onMouseLeave={this.leftmainBtn} >
+            <div className="main-btn" onClick={this.scrollToProjectSection} onMouseEnter={this.hoveredMainBtn} onMouseLeave={this.leftmainBtn} >
               <div className="main-btn-content center" >
                 <div className="main-btn-line"></div>
                 <div className="main-btn-line"></div>
@@ -72,8 +81,8 @@ export class LandingPage extends Component {
           </div>
           {/* <!-- End of Section 1--> */}
           {/* <!-- Section 3--> */}
-          <section className='section-3'>
-              <Projects ></Projects> 
+          <section ref={this.projectSectionRef} className='section-3'>
+              <Projects></Projects> 
           </section>
           {/* <!-- End of Section 3--> */}
         </div>
@@ -83,6 +92,11 @@ export class LandingPage extends Component {
 
   }
 
+  /**
+   * Adds a ripple when hovering the main button effect by creating a new element
+   * 
+   * @param  e the event 
+   */
   hoveredMainBtn = e =>{
     const left = e.clientX - e.target.getBoundingClientRect().left;  
     const top = e.clientY - e.target.getBoundingClientRect().top;  
@@ -94,7 +108,10 @@ export class LandingPage extends Component {
     this.mainButton.prepend(this.ripple);
   }
 
-
+  /**
+   * Removes the ripple effect div
+   * @param {} e 
+   */
   leftmainBtn = e => {
     this.mainButton.removeChild(this.ripple)
   }

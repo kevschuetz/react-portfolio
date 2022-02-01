@@ -131,6 +131,7 @@
     border: .2rem dotted     white;
     padding: .2rem;
     overflow: hidden;
+    cursor: pointer;
 }
 .main-btn-content{
     width: 100%;
