@@ -111,3 +111,9 @@ html {
   word-break: break-all;
   line-height: 4;
 }
+
+
+.section-4{
+  position: relative;
+  width: 100%;
+}

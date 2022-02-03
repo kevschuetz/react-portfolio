@@ -79,7 +79,7 @@ clickedClose(e){
  */
   render(){
     return(
-<div>
+<div className="projects-container">
     <h1 className='section-heading'>My work</h1>
     <div className="projects center">
       {
