@@ -1,14 +1,22 @@
 import './App.css';
 import React from 'react';
 import { LandingPage } from './components/landing-page/landing-page.component';
-import { Component } from 'react';
 import Projects from './components/projects/projects.component';
+import Contact from './components/contact/contact.component';
 import Services from './components/services/services.component';
+import img1 from "./images/projects/project-1.jpg"
+import img1_1 from "./images/projects/project-1-big.jpg"
+import img2 from "./images/projects/project-2.jpg"
+import img2_1 from "./images/projects/project-2-big.jpg"
+import img3 from "./images/projects/project-3.jpg"
+import img3_1 from "./images/projects/project-3-big.jpg"
+
+
 /**
  * Super-Component handling 
  * the mouse-circle and mouse dot animations as well as the circle-animations
  */
-class App extends Component{
+class App extends React.Component{
   circles;
   mainCircle;
   mouseCircle;
@@ -28,6 +36,15 @@ class App extends Component{
 
     this.projectSectionRef = React.createRef();
     this.scrollToProjectSection = this.scrollToProjectSection.bind(this);
+
+    this.state={
+      images:[
+        {id: 1, img: img1, img_big: img1_1},
+        {id: 2, img: img2, img_big: img2_1},
+        {id: 3, img: img3, img_big: img3_1},
+      ]
+
+    }
   }
   /**
    * Assigns the necessary elements from the document for the event handlers
@@ -67,7 +84,7 @@ class App extends Component{
 
           {/* <!-- Section 3--> */}
           <section ref={this.projectSectionRef} className='section-3'>
-            <Projects></Projects> 
+            <Projects images={this.state.images}></Projects> 
           </section>
           {/* <!-- End of Section 3--> */}
 
@@ -76,6 +93,12 @@ class App extends Component{
             <Services></Services>
           </section>
           {/* <!-- End of Section 4--> */} 
+
+          {/* <!-- Section 5 --> */}
+          <section className='section-5 center'>
+            <Contact></Contact>
+          </section>
+          {/* <!-- End of Section 5--> */} 
 
         {/* <!--  End of Page Container --> */}
         </div>

@@ -126,7 +126,7 @@
     bottom: 3rem;
     width: 13rem;
     height: 13rem;
-    background-color:  #231aa1;
+    background-color:  #FFC000;
     border-radius: 50%;
     border: .2rem dotted     white;
     padding: .2rem;
@@ -136,7 +136,7 @@
 .main-btn-content{
     width: 100%;
     height: 100%;
-    border: .2rem dotted #e7be08;
+    border: .2rem dotted blue;
     border-radius:  50%;
     transform: rotate(40deg);
     transition: transform 0.2s, border 0.2s;
@@ -144,7 +144,7 @@
 
 .main-btn:hover .main-btn-content{
     transform: rotate(60deg);
-    border: 0.2rem dotted #9b0e0e;
+    border: 0.2rem dotted blue;
     transition: transform 0.2s 0.5s, border 0.2s;
 }
 
@@ -152,7 +152,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #e7be08;
+    background-color: blue;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     animation: rippleAnim 0.5s forwards;

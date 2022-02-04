@@ -55,7 +55,6 @@ export class LandingPage extends React.Component {
             </div>
             {/* <!-- End of Main-Button --> */}
           </div>
-
         </div>
     );
 

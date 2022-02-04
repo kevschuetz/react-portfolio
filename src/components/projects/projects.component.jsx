@@ -1,10 +1,4 @@
 import React from "react"
-import img1 from "./projects/project-1.jpg"
-import img1_1 from "./projects/project-1-big.jpg"
-import img2 from "./projects/project-2.jpg"
-import img2_1 from "./projects/project-2-big.jpg"
-import img3 from "./projects/project-3.jpg"
-import img3_1 from "./projects/project-3-big.jpg"
 import './projects.styles.css'
 import Project from "./../project/project.component"
 
@@ -21,16 +15,9 @@ class Projects extends React.Component{
   constructor(){
     super()
 
-    this.state = {
-      images: [
-        {id: 1, img: img1, img_big: img1_1},
-        {id: 2, img: img2, img_big: img2_1},
-        {id: 3, img: img3, img_big: img3_1},
-      ],
-
-  }
-  this.handleProjectClick = this.handleProjectClick.bind(this);
-  this.clickedClose = this.clickedClose.bind(this);
+ 
+    this.handleProjectClick = this.handleProjectClick.bind(this);
+    this.clickedClose = this.clickedClose.bind(this);
 }
 
 /**
@@ -53,7 +40,7 @@ handleProjectClick(id){
 
   let bigImg = document.createElement("img");
   bigImg.className = "project-img";
-  let bigImgPath = this.state.images.filter(item => item.id === id)[0].img_big;
+  let bigImgPath = this.props.images.filter(item => item.id === id)[0].img_big;
 
   bigImg.setAttribute("src", bigImgPath)
   this.bigImgWrapper.appendChild(bigImg);
@@ -83,7 +70,7 @@ clickedClose(e){
     <h1 className='section-heading'>My work</h1>
     <div className="projects center">
       {
-        this.state.images.map((image) => (
+        this.props.images.map((image) => (
           <Project key="{image.id}" id={image.id} img={image.img} onClick={this.handleProjectClick}></Project>
         )
         )

@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     position: relative;
-    border: .2rem dotted blue;
+    border: .2rem dotted #FFC000;
     border-radius: .5rem;
     cursor: pointer;
     perspective: 20rem;
