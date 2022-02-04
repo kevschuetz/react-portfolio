@@ -1,6 +1,6 @@
 import React from "react"
 import './projects.styles.css'
-import Project from "./../project/project.component"
+import Project from "./project/project.component"
 
 /**
  * The section displaying the projects
@@ -81,7 +81,6 @@ clickedClose(e){
 
     )
   }
-
 }
 
 export default Projects;

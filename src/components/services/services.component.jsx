@@ -1,7 +1,7 @@
 import React from "react";
 import './services.styles.css'
 import services from "./services-data";
-import Service from "../service/service.component";
+import Service from "./service/service.component";
 
 /**
  * Class Component for the services

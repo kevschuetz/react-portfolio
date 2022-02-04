@@ -81,19 +81,19 @@ class App extends React.Component{
           {/* <!--  Section 1 --> */}
           <LandingPage scrollToProjects={this.scrollToProjectSection}></LandingPage> 
           {/* <!-- End of Section 1--> */}
-
+          <hr></hr>
           {/* <!-- Section 3--> */}
           <section ref={this.projectSectionRef} className='section-3'>
             <Projects images={this.state.images}></Projects> 
           </section>
           {/* <!-- End of Section 3--> */}
-
+          <hr></hr>
           {/* <!-- Section 4 --> */}
           <section className='section-4'>
             <Services></Services>
           </section>
           {/* <!-- End of Section 4--> */} 
-
+          <hr></hr>
           {/* <!-- Section 5 --> */}
           <section className='section-5 center'>
             <Contact></Contact>

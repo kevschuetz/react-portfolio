@@ -1,11 +1,5 @@
 
 /* Section 1 */
-.section-1{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-}
-
 /* logo */
 .logo{
     position: absolute;
@@ -70,7 +64,7 @@
     background: url(images/circle-1-img.jpg) center no-repeat;
     background-size: cover;
     background-clip: content-box;
-    border: .5rem dotted #231aa1;
+    border: .5rem dotted #FF6464;
     margin-left: -10rem;
 }
 
@@ -78,7 +72,7 @@
     background: url(images/circle-2-img.jpg) center no-repeat;
     background-size: cover;
     background-clip: content-box;
-    border: .5rem dashed white;
+    border: .5rem dashed #FFE162;
     margin-right: -10rem;
 }
 
@@ -86,7 +80,7 @@
     background: url(images/circle-3-img.jpg) center no-repeat;
     background-size: cover;
     background-clip: content-box;
-    border: 1rem double white;
+    border: 1rem double #EEEEEE;
     margin-left: -10rem;
 }
 
@@ -94,7 +88,7 @@
     background: url(images/circle-4-img.jpg) center no-repeat;
     background-size: cover;
     background-clip: content-box;
-    border: .7rem double#231aa1;
+    border: .7rem double #91C483;
     margin-right: -10rem;
 }
 
@@ -126,9 +120,9 @@
     bottom: 3rem;
     width: 13rem;
     height: 13rem;
-    background-color:  #FFC000;
+    background-color:  #91C483;
     border-radius: 50%;
-    border: .2rem dotted     white;
+    border: .2rem dotted     #EEEEEE;
     padding: .2rem;
     overflow: hidden;
     cursor: pointer;
@@ -136,7 +130,7 @@
 .main-btn-content{
     width: 100%;
     height: 100%;
-    border: .2rem dotted blue;
+    border: .2rem dotted #EEEEEE;
     border-radius:  50%;
     transform: rotate(40deg);
     transition: transform 0.2s, border 0.2s;
@@ -144,7 +138,7 @@
 
 .main-btn:hover .main-btn-content{
     transform: rotate(60deg);
-    border: 0.2rem dotted blue;
+    border: 0.2rem dotted #EEEEEE;
     transition: transform 0.2s 0.5s, border 0.2s;
 }
 
@@ -152,7 +146,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: blue;
+    background-color: #FF6464;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     animation: rippleAnim 0.5s forwards;
@@ -204,10 +198,3 @@
     text-transform: uppercase;
 }
 /* End of Section 1 */
-
-.section-3{
-    width: 100%;
-    height: 100%;
-    padding: 20rem 0 10rem 0;
-    position: relative;
-}
