@@ -130,7 +130,7 @@
 .main-btn-content{
     width: 100%;
     height: 100%;
-    border: .2rem dotted #EEEEEE;
+    border: .4rem dotted #FF6464;
     border-radius:  50%;
     transform: rotate(40deg);
     transition: transform 0.2s, border 0.2s;
@@ -138,7 +138,7 @@
 
 .main-btn:hover .main-btn-content{
     transform: rotate(60deg);
-    border: 0.2rem dotted #EEEEEE;
+    border: 0.4rem dotted #91C483;
     transition: transform 0.2s 0.5s, border 0.2s;
 }
 

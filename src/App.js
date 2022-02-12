@@ -22,11 +22,17 @@ class App extends React.Component{
   mouseCircle;
   mouseCircleBool;
   mouseDot;
+  menuIcon;
+  navBar;
+
   mX;
   mY;
   z;
   
   projectSectionRef;
+  servicesRef;
+  contactRef;
+  homeRef;
   constructor(){
     super()
 
@@ -35,6 +41,10 @@ class App extends React.Component{
     this.z = 100;
 
     this.projectSectionRef = React.createRef();
+    this.servicesRef = React.createRef();
+    this.contactRef = React.createRef();
+    this.homeRef = React.createRef();
+
     this.scrollToProjectSection = this.scrollToProjectSection.bind(this);
 
     this.state={
@@ -55,9 +65,27 @@ class App extends React.Component{
     this.mouseCircle = document.querySelector(".mouse-circle");
     this.mouseDot = document.querySelector(".mouse-dot");
     this.mouseCircleBool = true;
+    this.menuIcon = document.querySelector(".menu-icon");
+    this.navBar = document.querySelector(".navbar");
+
+    document.addEventListener("scroll", () => {
+      console.log(this.navBar);
+      console.log(this.menuIcon);
+
+      this.menuIcon.classList.add("show-menu-icon");
+      this.navBar.classList.add("hide-navbar");
+
+      if(window.scrollY === 0){
+        this.menuIcon.classList.remove("show-menu-icon");
+        this.navBar.classList.remove("hide-navbar");
+      }
+    })
   }
 
   scrollToProjectSection = () => this.projectSectionRef.current.scrollIntoView();
+  scrollToContactSection = () => this.contactRef.current.scrollIntoView();
+  scrollToServicesSection = () => this.servicesRef.current.scrollIntoView();
+  scrollToLandingSection = () => this.homeRef.current.scrollIntoView();
   /**
    * Attaches the mouse-movement listener to the outermost element and wraps the landing-page
    * which contains all other sections
@@ -78,24 +106,42 @@ class App extends React.Component{
           <div className="page-bg"></div>
           {/* <!--End ofPage BG --> */}
 
+          <div className="menu-icon center" onClick={this.onMenuItemClick}> 
+            <div className="menu-icon-line"></div>
+            <div className="menu-icon-line"></div>
+          </div>
+          <nav className="navbar">
+            <a href="#" className='navbar-link'>Home</a>     
+            <span className='navbar-link' onClick={this.scrollToProjectSection}>Projects</span>     
+            <span className='navbar-link' onClick={this.scrollToServicesSection}>Services</span>     
+            <span className='navbar-link' onClick={this.scrollToContactSection}>Contact</span>     
+          </nav>
+
+
           {/* <!--  Section 1 --> */}
-          <LandingPage scrollToProjects={this.scrollToProjectSection}></LandingPage> 
+          <LandingPage ref={this.homeRef} scrollToProjects={this.scrollToProjectSection}></LandingPage> 
           {/* <!-- End of Section 1--> */}
+
           <hr></hr>
+
           {/* <!-- Section 3--> */}
           <section ref={this.projectSectionRef} className='section-3'>
             <Projects images={this.state.images}></Projects> 
           </section>
           {/* <!-- End of Section 3--> */}
+
           <hr></hr>
+
           {/* <!-- Section 4 --> */}
-          <section className='section-4'>
+          <section ref={this.servicesRef} className='section-4'>
             <Services></Services>
           </section>
           {/* <!-- End of Section 4--> */} 
+
           <hr></hr>
+
           {/* <!-- Section 5 --> */}
-          <section className='section-5 center'>
+          <section ref={this.contactRef} className='section-5 center'>
             <Contact></Contact>
           </section>
           {/* <!-- End of Section 5--> */} 
@@ -105,6 +151,12 @@ class App extends React.Component{
     </div>
     )
   }
+
+  onMenuItemClick = e => {
+      this.menuIcon.classList.remove("show-menu-icon");
+      this.navBar.classList.remove("hide-navbar");
+  }
+
   /**
    * Moves the circles contrary to the mouse-movement
    * Sets the mouse-circle and dot elements to the position of the mouse
