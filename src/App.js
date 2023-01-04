@@ -10,6 +10,9 @@ import img2 from "./images/projects/project-2.jpg"
 import img2_1 from "./images/projects/project-2-big.jpg"
 import img3 from "./images/projects/project-3.jpg"
 import img3_1 from "./images/projects/project-3-big.jpg"
+import img4 from "./images/projects/project-4.jpg"
+import img4_1 from "./images/projects/project-4-big.jpg"
+
 
 
 /**
@@ -52,6 +55,7 @@ class App extends React.Component{
         {id: 1, img: img1, img_big: img1_1},
         {id: 2, img: img2, img_big: img2_1},
         {id: 3, img: img3, img_big: img3_1},
+        {id: 4, img: img4, img_big: img4_1}
       ]
 
     }
