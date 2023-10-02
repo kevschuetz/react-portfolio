@@ -28,7 +28,7 @@ const paperBtnClicked = (e) => {
     paperText.classList.toggle("change");
 
     // Calculates the right position of the heading by checking if the change class is currently assigned   
-    const rightPosition = paperText.classList.contains('change') ? `calc(100% - ${getComputedStyle(e.target).width})` : 0;
+    const rightPosition = paperText.classList.contains('change') ? 0 : `calc(100% - ${getComputedStyle(e.target).width})` ;
 
     // Sets the new right position on the heading
     e.target.style.right = rightPosition;

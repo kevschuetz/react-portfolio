@@ -134,8 +134,8 @@ class App extends React.Component{
   downloadCV = () => {
     console.log("Downloading..")
     const link = document.createElement('a');
-    link.href = {cv};
-    link.download = 'Your_File_Name.pdf';
+    link.href = 'https://drive.google.com/file/d/1E1wcjrOD25YAImtU6qrgjYJLY_NwdD7H/view?usp=sharing';
+    link.target = '_blank'
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
