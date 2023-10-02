@@ -1,5 +1,7 @@
 import React from 'react'
 import designerImg from './images/designer.jpg'
+import designerImg2 from './images/designer2-large.jpg'
+
 import './landing-page.styles.css';
 
 /**
@@ -35,7 +37,7 @@ export class LandingPage extends React.Component {
               <div className="circle circle-4"></div>
             </div>
             <div className="main-circle center">
-              <img src={designerImg} className="resize" alt="designer"></img>
+              <img src={designerImg2} className="resize" alt="designer"></img>
             </div>
             {/* <!-- End of Animated Circles --> /*}
 

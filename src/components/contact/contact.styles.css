@@ -2,7 +2,7 @@
  font-family: "Poppins", sans-serif;
  font-size: 6rem;
  font-weight: 400;
- color: #FF6464;   
+ color: white;   
  letter-spacing: .3rem;
  margin-bottom: 3rem;
  transition: opacity .3s;
@@ -17,10 +17,10 @@
     padding: .5rem;
     margin: 1rem 0;
     background-color: rgba(255, 255, 255, .1);
-    border: .1rem solid #FF6464;
+    border: .1rem solid white;
     font-size: 1.7rem;
     font-weight: bold;
-    color: #aaa;
+    color: white;
     letter-spacing: .1rem;
     height: 5rem;
 }
@@ -33,11 +33,22 @@
 .form-submit-btn{
     width: 20rem;
     height: 5rem;
-    background-color: #FF6464;
+    background-color: white;
     border:none;
     align-self: flex-start;
     font-size: 1.8rem;
-    color: #fff;
+    font-weight: 1000;
+    color: black;
     cursor: pointer;
+}
+
+
+::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder { /* Edge 12 -18 */
+  color: red;
 }
 

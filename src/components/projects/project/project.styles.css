@@ -1,4 +1,3 @@
-
 .project{
     width: 40rem;
     height: 45rem;
@@ -8,7 +7,7 @@
     display: flex;
     justify-content: center;
     position: relative;
-    border: .2rem dotted #91C483;
+    border: .2rem dotted white;
     border-radius: .5rem;
     cursor: pointer;
     perspective: 20rem;
